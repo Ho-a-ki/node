@@ -75,7 +75,7 @@ npm install > npm i 로 줄여쓰기 가능.
 노드 패키지들의 버전은 항상 세자리.
 노드의 버전도 세자리 인데 SemVer 방식의 버전 넘버링을 따름. 패키지 버전 번호를 어떻게 정하고 올려야 하는지 명시하는 규칙.
 
-<img src="img.png">
+<img src="img1.png">
 
 Major , Minor , Patch를 따름.
 
