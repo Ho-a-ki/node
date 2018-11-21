@@ -3,3 +3,28 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  h2= title
+  p Welcome to #{title}
+  button(class=title, type='submit') 전송
+  input(placeholder=title+'연습')
+  .title 안녕하세요.
+  #title 반갑습니다.
+  - var node = 'node.js'
+  - var js = 'javascripts'
+  p.title #{node}와 #{js}
+
+  ul 
+    each fr in ['사과','배','오렌지','바나나']
+      li= fr
+
+
+  ul
+    each fr, index in ['사과','배','오렌지']
+      li= (index + 1) + '번째 ' + fr
+
+
+  if isLog
+    div 로그인 되었습니다.
+
+  else
+    div 로그인이 필요합니다.
