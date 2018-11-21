@@ -217,14 +217,14 @@ comment.js
 
 6. app.js 수정
 
-<a href="result.png">
+<img src="result.png">
 
 수정 완료한 후 npm start 후 서버 들어갔을 때 초기.
 
-<a href="img5.png">
+<img src="img5.png">
 
 웹을 통해서 새로운 DB data 생성.
 
-<a href="img4.png">
+<img src="img4.png">
 
 db 콘솔 들어가서 실제로 만들어졌는지 확인.
