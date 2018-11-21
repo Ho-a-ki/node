@@ -177,7 +177,7 @@ ORM이 아니라 ODM.
 
 JOIN 기능도 populate 라는 기능으로 보완.
 
-> 몽구스 시작하기 
+### 몽구스 시작하기 
 
 ``` express learn-mongoose --view=pug ```
 
