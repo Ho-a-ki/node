@@ -1,3 +1,4 @@
 node_modules/
 pwd.png
 schemas
+.env

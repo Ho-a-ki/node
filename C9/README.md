@@ -71,3 +71,84 @@ https://github.com/ZeroCho/nodejs-book/tree/master/ch9/9.1/nodebird/views
 6번까지 완성하면 다음과 같은 화면
 
 <스크린샷 넣기 img>
+
+
+## 9.2 데이터 베이스 세팅하기
+
+models 폴더 안에 3가지 파일 생성
+
+1. user.js
+2. post.js
+3. hashtag.js
+
+이후 index.js 를 수정합니다.
+수정 완료 한 후에 콘솔 창에서 데이터 베이스를 생성합니다.
+
+``` $ sequelize db:create ```
+
+> config.json 에서 password를 스트링으로 작성해야. 그냥 숫자로 넣었다가 오류 떴음.
+
+데이터베이스를 생성하는 것을 완료했으니,
+모델을 서버와 연결 합시다. (app.js 수정)
+
+연결한 후에 npm start 하면 테이블을 자동으로 생성합니다.(최초)
+
+## 9.3 패스포트 모듈로 로그인 구현하기.
+
+passport 관련 모듈 설치
+
+``` $ npm i passport passport-local passport-kakao bcrypt ```
+
+이후 app.js에 passport 모듈 연결하기. (먼저 연결 해놓고 작성.)
+연결 후에 passport 모듈 작성하기 (passport/index.js)
+
+패스포트 일련의 과정을 이해하기.
+
+전체 과정
+
+1. 로그인 요청
+2. passport.authenticate 메서드 호출
+3. 로그인 전략 수행
+4. 로그인 성공 시 사용자 정보 객체와 함께 req.login 호출
+5. req.login 메서드가 passport.serializeUser 호출
+6. req.session 에 사용자 아이디만 저장
+7. 로그인 완료
+
+
+### 로컬 로그인 구현하기.
+
+로컬 로그인이란 sns 서비스를 통해 로그인 하지 않고
+자체적으로 회원가입 후 로그인 하는 것.
+passport를 통해 구현하려면 passport-local이 필요합니다.
+
+회원가입, 로그인, 로그아웃 라우터 만들기.
+라우터는 접근조건이 있는데 로그인한 사람이 회원가입, 로그인 라우터에 접근하면 안된다는 예시!
+
+따라서 라우터에 접근 권한을 제어하는 미들웨어가 필요하다.
+미들웨어를 만들어보면서 isAuthenticated 메서드에 대해 알아봅시다.
+
+1. middleware.js 작성
+2. page.js 작성
+3. routers/auth.js 작성
+4. passport/localStrategy.js 작성
+
+### 카카오 로그인 구현하기
+
+1. passport/kakaoStrategy.js 작성
+
+
+이후 카카오 개발자 센터에서 앱만들고 .env에 넣어주기
+
+카카오에서 oauth > auth로 수정해주면 됩니다.
+
+
+
+### Multer 모듈로 이미지 업로드 구현하기
+
+``` $ npm i multer ```
+
+이미지 모듈.
+
+이후 post 라우터 작성하기.
+
+### 프로젝트 마무리하기.
