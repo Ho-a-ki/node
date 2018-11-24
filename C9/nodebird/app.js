@@ -10,6 +10,9 @@ require('dotenv').config()
 
 const pageRouter = require('./routes/page')
 const authRouter = require('./routes/auth')
+const postRouter = require('./routes/post')
+const userRouter = require('./routes/user')
+
 const { sequelize } = require('./models') // mysql 연결
 const passportConfig = require('./passport') // 직관성을 위해서 나는 index.js 붙였음.
 
@@ -24,6 +27,7 @@ app.set('port' , process.env.PORT || 8001)
 // middle ware config 
 app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname,'public')))
+app.use('/img', express.static(path.join(__dirname, 'uploads')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 app.use(cookieParser(process.env.COOKIE_SECRET))
@@ -42,6 +46,10 @@ app.use(passport.session())
 
 app.use('/',pageRouter)
 app.use('/auth', authRouter)
+app.use('/post', postRouter)
+app.use('/user', userRouter)
+
+
 
 app.use((req,res,next) => {
     const err = new Error('Not Found')

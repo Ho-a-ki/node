@@ -3,9 +3,11 @@
 8장까지의 배운 것을 바탕으로 실제 웹 서비스 구축.
 프로미스 보다 async/await 문법을 적극 사용하자.
 
-``` $ npm i -g sequelize-cli ```
-``` $ npm i sequelize mysql2 ```
-``` $ sequelize init ```
+``` 
+$ npm i -g sequelize-cli 
+$ npm i sequelize mysql2 
+$ sequelize init 
+```
 
 실행시 config, migrations, model, seeders 폴더 생김
 이 후 템플릿파일을 넣을 views 라우터를 넣을 routes
@@ -17,9 +19,11 @@
 
 이 후 필요한 module들을 설치.
 
-``` $ npm i express cookie-parser express-session morgan connect-flash pug ```
-``` $ npm i -g nodemon ```
-``` $ npm i -D nodemon ```
+``` 
+$ npm i express cookie-parser express-session morgan connect-flash pug
+$ npm i -g nodemon
+$ npm i -D nodemon 
+```
 
 서버 코드에 수정 사항이 생길때 마다 매번 서버를 재시작 하기 귀찮으므로 nodemon 모듈로
 서버를 자동 재시작하는 코드를 작성. 서버 코드 수정시 알아서 자동으로 서버 재시작 합니다.
@@ -147,8 +151,13 @@ passport를 통해 구현하려면 passport-local이 필요합니다.
 
 ``` $ npm i multer ```
 
-이미지 모듈.
+이미지 모듈 설치 및 불러오기.
 
-이후 post 라우터 작성하기.
+이후 post 라우터 작성하고 page.js 수정
+
 
 ### 프로젝트 마무리하기.
+
+이미지 업로드까지 완성되었으나, 이제 해시태그 검색 기능과 팔로잉만 추가하면됩니다.
+
+post.js 수정
