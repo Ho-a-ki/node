@@ -14,7 +14,8 @@ const passportConfig = require('./passport') // 직관성을 위해서 나는 in
 // router 설정
 const authRouter = require('./routes/auth')
 const indexRouter = require('./routes')
-
+const v1 = require('./routes/v1')
+const v2 = require('./routes/v2')
 
 const app = express()
 sequelize.sync()
@@ -43,8 +44,10 @@ app.use(flash())
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use('/',indexRouter)
 app.use('/auth', authRouter)
+app.use('/v1',v1)
+app.use('/v2',v2)
+app.use('/',indexRouter)
 
 app.use((req,res,next) => {
     const err = new Error('Not Found')
