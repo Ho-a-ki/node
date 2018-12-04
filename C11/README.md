@@ -137,9 +137,35 @@ Socket.IO 에 편의 기능이 많이 추가 되어 있음.
 사람들이 익명으로 채팅할 수 있는 채팅방 생성.
 자유롭게 참여하여 GIF 파일을 올릴 수 있는 채팅방.
 
+```
+$ npm i mongoose multer axios color-hash
+```
+
 DB는 몽구스와 몽고DB를 사용한다.
 
-1. 채팅방 스키마 생성.
+1. 채팅방 스키마 생성. (room.js)
+2. 채팅 스키마 생성 (chat.js)
+
+3. 몽고디비와 연결하는 코드 index.js 수정
+4. env에 몽고 아이디와 몽고 비밀번호 입력.
+
+5. app.js 수정
+6. layout.pug / main.css / main.pug 작성
+7. roomg.pug / chat.pug / socket.js 작성
+
+8. app.js 수정
+
+쭉 책 보고 진행.
 
 ## 5. 채팅 구현하기
+
+프론트엔드에서는 서버에서 보내는 채팅 데이터를 받는 소켓 이벤트 리스너가 필요.
+
+1. chat.pug 수정
+2. index.js 수정
+
+<img src='1.png'>
+<img src='2.png'>
+
+## 6. 프로젝트 마무리 하기.
 
